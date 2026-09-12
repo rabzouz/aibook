@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #080a13;
+    --card: #111422;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #6366f1;
+  }
+
+  body {
+    background: radial-gradient(circle at top, rgba(99,102,241,.20), transparent 35%), var(--background);
+    color: var(--text);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .card {
+    background: rgba(17, 20, 34, 0.88);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 1rem;
+  }
+
+  .btn-primary {
+    background: #6366f1;
+    color: white;
+    border-radius: .75rem;
+    padding: .75rem 1rem;
+    font-weight: 700;
+  }
+
+  .btn-secondary {
+    background: rgba(30, 41, 59, .8);
+    color: white;
+    border-radius: .75rem;
+    padding: .75rem 1rem;
+    font-weight: 700;
+  }
 }
